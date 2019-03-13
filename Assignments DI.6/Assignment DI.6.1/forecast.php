@@ -18,6 +18,7 @@
                   <div class="row">
                         <div class="col-lg-12 mt-5">
                               <header>
+                                    <a href="index.php" class="btn btn-secondary mb-3">Back</a>
                                     <h4 class="text-secondary">5 Day Weather Forecast</h4>
                                     <?php $id = $_GET['id'];
                                           echo "ID: " . $id;
@@ -51,34 +52,15 @@
                         var day = 1;
 
                         city.innerHTML = "<i>Forecast for " + data.city.name + "</i><hr><br>";
-                        for (var i = 1; i < 6; i++) {
+                        for (var i = 1; i < 50; i += 8) {
                               var xForecast = document.createElement("div");
-                              xForecast.innerHTML = "Day " + day++ + "<br> Degrees: " + parseInt(data.list[i].main.temp - 273) + "<br> Weather: " + data.list[i].weather.descripion + " <br> Humidity level: " + data.list[i].main.humidity + "<br><br>";
+                              xForecast.innerHTML = "<span class='bg-info'>Day " + day++ + "</span><br> Degrees: " + parseInt(data.list[i].main.temp - 273) + " <br> Humidity level: " + data.list[i].main.humidity + "<br>Date: " + data.list[i].dt_txt + "<br><br>";
                               document.getElementById("forecast").appendChild(xForecast);
                         }
-                        // for (var i = 0; i < 5; i++) {
-                        //       forecast.innerHTML = "Day 1 | " + " <br> Humidity level: " + data.list[i].main.humidity;
-                        // }
                         console.log(data);
                   }
 
                   request.send();
-
-                  // function responseBack(response) {
-                  //       var jsonForecast = JSON.parse(response);
-                  //
-                  //
-                  //       // cityName.innerHTML = "Weather for " + "<b>" + jsonWeather.name + "</b>" + " (" + jsonWeather.sys.country + ")";
-                  //       // icon.src = "http://openweathermap.org/img/w/" + jsonWeather.weather[0].icon + ".png";
-                  //       // temperature.innerHTML = "<h4>Degrees: " + parseInt(jsonWeather.main.temp - 273) + "°</h4>";
-                  //       // humidity.innerHTML = "<b>Humidity level: </b>" + jsonWeather.main.humidity + "%";
-                  //       // description.innerHTML = "<b>Description: </b>" + jsonWeather.weather[0].description;
-                  //       // wind.innerHTML = "<b>Wind force: </b>" + jsonWeather.wind.speed + ", <i>wind direction: </i>" + jsonWeather.wind.deg + " deg";
-                  //       console.log(jsonForecast);
-                  //
-                  //       forecast.innerHTML = "<a href=forecast.php?id=" + jsonWeather.id + ">Forecast</a>";
-                  // }
-
 
             </script>
 
