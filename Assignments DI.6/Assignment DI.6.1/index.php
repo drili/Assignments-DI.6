@@ -12,6 +12,7 @@
                   <div class="row">
                         <div class="col-lg-12">
                               <h1>Assignment DI.6.1 | Drilon Braha</h1>
+                              <p>Git Test</p>
                         </div>
                   </div>
 
